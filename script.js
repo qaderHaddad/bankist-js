@@ -182,6 +182,7 @@ btnClose.addEventListener('click', function(e) {
     //Hide UI - simulate logout
     containerApp.style.opacity = 0;
   };
+  inputClosePin.value = inputCloseUsername = '';
 })
 
 /////////////////////////////////////////////////
