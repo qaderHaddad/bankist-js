@@ -167,6 +167,24 @@ btnTransfer.addEventListener('click', function(e) {
   
 });
 
+btnLoan.addEventListener('click', function(e) {
+  e.preventDefault(); 
+  
+  const amount = Number(inputLoadAmount.value);
+  
+  const validLoan = currentAccount.movements.some(mov => mov > 0.1 * mount);
+  
+  if (amount > 0 && validLoan) {
+    // Add movement
+    currentAccount.movements.push(amount);
+    
+    //UpdateUI
+    updateUI(currentAccount);
+    
+    inputLoadAmount.value = '';
+  };
+})
+
 btnClose.addEventListener('click', function(e) {
   e.preventDefault(); // Prevent button from submitting form. 
   
